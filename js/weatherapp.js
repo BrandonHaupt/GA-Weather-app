@@ -18,11 +18,10 @@ function getLocation(location){
     .then((data) => {
         const $main = $(`main`)
         // $main.empty()
-        console.log(data)
+        // console.log(data)
         
         const locationURL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=${apiKey}`
 
-        console.log(data.lat)
 
         const p = $(`p`)
 
@@ -36,6 +35,11 @@ function getLocation(location){
     })
 }
 
+function getWeatherInfo(){
+    getLocation()
+    
+}
+
 
 
 // grabbing the on click event
@@ -47,4 +51,4 @@ $('input[type=submit]').on("click", (event) => {
     getLocation(inputText)
 })
 
-getLocation("Missouri")
+getWeatherInfo()
