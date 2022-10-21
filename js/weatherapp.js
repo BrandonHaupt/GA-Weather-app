@@ -3,41 +3,51 @@
 const apiKey = "f0bf8da4eb8f0649281c58c7e630b550"
 
 // const baseURL = "http://api.openweathermap.org/geo/1.0/direct?q="
+const baseURL = "http://api.openweathermap.org/geo/1.0/zip?zip="
 
 //example API Call
-const baseURL = "http://api.openweathermap.org/geo/1.0/direct?"
+// const baseURL = "http://api.openweathermap.org/geo/1.0/direct?"
 
 function getLocation(location){
-    const url = `${baseURL}q=${location}&limit=5&appid=${apiKey}`
-    // console.log(url)
+    const url = `${baseURL}${location}&limit=5&appid=${apiKey}`
 
     //Example after location gotten
     //https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}
 
     $.ajax(url)
     .then((data) => {
-        const $main = $(`main`)
-        // $main.empty()
-        // console.log(data)
         
+        // $main.empty()
+        console.log(data)
+
+        // console.log(data.lon)
+
         const locationURL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=${apiKey}`
 
+        const $main = $(`main`)
+        $main.empty()
 
-        const p = $(`p`)
+        const div = $('<div>')
 
-        p.html(`<p>Weather For: ${locationURL.temp}</p>
-        <p>Temperature: ${locationURL.temperature}</p>
-        <p>Feels like: ${data.lat}</p>
-        <p>Weather: ${data.lon}</p>
+        div.html(`<p>Weather For: ${data.name}</p>
+        <p>Temperature: ${data}</p>
+        <p>Feels like: ${data}</p>
+        <p>Weather: ${data}</p>
         `)
 
-        $main.append
+        $main.append(div)
+      
+    })
+    .then((data) => {
+       
     })
 }
 
-function getWeatherInfo(){
+function getWeatherInfo(data){
     getLocation()
     
+    
+
 }
 
 
@@ -51,4 +61,5 @@ $('input[type=submit]').on("click", (event) => {
     getLocation(inputText)
 })
 
+getLocation("63376")
 getWeatherInfo()
