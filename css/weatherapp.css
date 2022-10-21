@@ -6,3 +6,16 @@ body {
     text-align: center;
 }
 
+.textField {
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+
+.button {
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid rgb(1, 105, 242);
+    cursor: pointer;
+    /* background-color: ; */
+}
