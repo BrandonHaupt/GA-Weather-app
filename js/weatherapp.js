@@ -17,28 +17,26 @@ function getLocation(location){
     $.ajax(url)
     .then((data) => {
         const $main = $(`main`)
-        $main.empty()
+        // $main.empty()
         console.log(data)
-        const locationURL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=${apiKey}}`
-        // console.log(locationURL)
+        
+        const locationURL = `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=${apiKey}`
+
+        console.log(data.lat)
 
         const p = $(`p`)
 
-        p.html(`<p>Weather For: ${locationURL.name}</p>
+        p.html(`<p>Weather For: ${locationURL.temp}</p>
         <p>Temperature: ${locationURL.temperature}</p>
-        <p>Feels like: ${data}</p>
-        <p>Weather: ${data}</p>
+        <p>Feels like: ${data.lat}</p>
+        <p>Weather: ${data.lon}</p>
         `)
 
         $main.append
     })
-    .then((locationURL) => {
-
-    //  console.log(locationURL)
-
-    
-    })
 }
+
+
 
 // grabbing the on click event
 $('input[type=submit]').on("click", (event) => {
