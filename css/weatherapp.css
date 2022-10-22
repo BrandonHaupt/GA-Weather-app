@@ -5,20 +5,38 @@
 
 body {
     text-align: center;
+   /* Created with https://www.css-gradient.com */
+    background: #01ABFF;
+    background: -webkit-linear-gradient(top, #01ABFF, #044BFB);
+    background: -moz-linear-gradient(top, #01ABFF, #044BFB);
+    background: linear-gradient(to bottom, #01ABFF, #044BFB);
+    height: 100vh;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 .textField {
     padding: 5px;
     border-radius: 20px;
-    border: 2px solid grey;
+    border: 3px solid black;
+    width: 300px;
 }
 
 .button {
     padding: 5px;
     border-radius: 20px;
-    border: 2px solid rgb(1, 105, 242);
+    border: 2px solid #00ffe1;
     cursor: pointer;
-    /* background-color: ; */
+    background-color: #00ffe1;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: rgb(77, 63, 225);
+    color: white;
 }
 
 div {
@@ -27,6 +45,7 @@ div {
     margin: 0 auto;
     width: 30%;
     padding: 30px 0;
+    font-size: 1.2rem;
 }
 
 p{

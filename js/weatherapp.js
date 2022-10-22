@@ -32,8 +32,8 @@ function getLocation(location){
             const div = $('<div>')
         
             div.html(`<p>Weather For: ${data.name}</p>
-            <p>Temperature: ${temp}</p>
-            <p>Feels like: ${f}</p>
+            <p>Temperature: ${temp}&deg</p>
+            <p>Feels like: ${f}&deg</p>
             <p>Weather: ${data.weather[0].description}</p>
             `)
         
@@ -51,4 +51,4 @@ $('input[type=submit]').on("click", (event) => {
     getLocation(inputText)
 })
 
-getLocation("63376")
+getLocation("73007")
